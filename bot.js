@@ -1,5 +1,6 @@
 const { Client, GatewayIntentBits } = require('discord.js');
-require('dotenv').config();  // Tambahkan ini untuk membaca file .env
+require('dotenv').config();  // Untuk membaca file .env
+const express = require('express');
 
 // Inisialisasi client dengan intents
 const client = new Client({
@@ -117,3 +118,19 @@ client.on('messageCreate', async message => {
 
 // Login bot
 client.login(TOKEN);
+
+// ------------------------
+// EXPRESS SERVER UNTUK HEALTH CHECK
+// ------------------------
+const app = express();
+const PORT = process.env.PORT || 8000;
+
+// Dummy route untuk Health Check
+app.get('/', (req, res) => {
+    res.send('Bot is running!');
+});
+
+// Jalankan server untuk Health Check
+app.listen(PORT, () => {
+    console.log(`Health check server running on port ${PORT}`);
+});
