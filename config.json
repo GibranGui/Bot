@@ -1,0 +1,114 @@
+{
+    "api_key": "YOUR_INDOdax_API_KEY",
+    "secret_key": "YOUR_INDOdax_SECRET_KEY",
+    
+    "bot_settings": {
+        "mode": "live",
+        "initial_capital": 1000000,
+        "daily_target": 0.03,
+        "max_drawdown": 0.15,
+        "trading_hours": {
+            "start": 9,
+            "end": 17,
+            "timezone": "Asia/Jakarta"
+        }
+    },
+    
+    "trading_params": {
+        "max_concurrent_trades": 5,
+        "max_risk_per_trade": 0.02,
+        "stop_loss_percent": 0.015,
+        "take_profit_percent": 0.02,
+        "risk_reward_ratio": 1.5,
+        "use_trailing_stop": true,
+        "trailing_stop_percent": 0.01
+    },
+    
+    "ml_settings": {
+        "model_type": "ensemble",
+        "prediction_confidence": 0.65,
+        "retrain_frequency": 100,
+        "use_sentiment_analysis": false,
+        "use_reinforcement_learning": false
+    },
+    
+    "asset_selection": {
+        "scan_all_coins": true,
+        "min_coin_price": 100,
+        "max_coin_price": 10000000,
+        "min_volume_24h": 1000000,
+        "volatility_threshold": 0.02,
+        "blacklist": [],
+        "whitelist": []
+    },
+    
+    "notifications": {
+        "telegram": {
+            "enabled": true,
+            "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+            "chat_id": "YOUR_TELEGRAM_CHAT_ID"
+        },
+        "discord": {
+            "enabled": false,
+            "webhook_url": "YOUR_DISCORD_WEBHOOK_URL"
+        },
+        "email": {
+            "enabled": false,
+            "smtp_server": "smtp.gmail.com",
+            "smtp_port": 587,
+            "email": "your_email@gmail.com",
+            "password": "your_app_password",
+            "recipient": "recipient_email@gmail.com"
+        }
+    },
+    
+    "logging": {
+        "log_level": "INFO",
+        "log_file": "logs/trading_bot.log",
+        "save_trade_logs": true,
+        "performance_report_interval": 3600
+    },
+    
+    "advanced": {
+        "compounding_enabled": true,
+        "hedging_enabled": false,
+        "grid_trading_enabled": false,
+        "dca_enabled": true,
+        "martingale_enabled": false,
+        "use_kelly_criterion": true,
+        "use_var_analysis": true
+    },
+    
+    "backtesting": {
+        "enabled": false,
+        "period": "30d",
+        "initial_capital": 1000000,
+        "commission_rate": 0.002,
+        "slippage": 0.001
+    },
+    
+    "monitoring": {
+        "dashboard_enabled": true,
+        "dashboard_port": 8050,
+        "health_check_interval": 60,
+        "auto_restart": true,
+        "max_memory_usage": 512
+    },
+    
+    "safety": {
+        "emergency_stop": {
+            "max_daily_loss": 0.05,
+            "max_consecutive_losses": 5,
+            "market_crash_threshold": 0.10
+        },
+        "circuit_breakers": {
+            "enabled": true,
+            "high_volatility_pause": true,
+            "low_liquidity_pause": true,
+            "news_event_pause": true
+        }
+    },
+    
+    "version": "1.0.0",
+    "last_updated": "2024-01-20"
+}
